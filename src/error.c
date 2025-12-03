@@ -13,8 +13,7 @@ _Thread_local static uint32_t error_count = 0;
 _Thread_local static int32_t error_code = 0;
 
 void
-error_push(const char* file, const char* func, const uint32_t line, const int32_t code)
-{
+error_push(const char* file, const char* func, const uint32_t line, const int32_t code) {
     assert(code != 0);
 
     error_code = code;
@@ -32,8 +31,7 @@ error_push(const char* file, const char* func, const uint32_t line, const int32_
 }
 
 __attribute__((__format__(__printf__, 1, 0))) void
-error_append_message(const char* format, ...)
-{
+error_append_message(const char* format, ...) {
     assert(error_count > 0);
 
     error_frame_t* frame = error_trace_nth(error_count - 1);
@@ -53,20 +51,17 @@ error_append_message(const char* format, ...)
 }
 
 int32_t
-error_get_code(void)
-{
+error_get_code(void) {
     return error_code;
 }
 
 uint32_t
-error_trace_length(void)
-{
+error_trace_length(void) {
     return min(error_count, MAX_ERRORS);
 }
 
 error_frame_t*
-error_trace_nth(const uint32_t n)
-{
+error_trace_nth(const uint32_t n) {
     if (n >= error_count || error_count >= MAX_ERRORS) {
         return nullptr;
     }
@@ -75,8 +70,7 @@ error_trace_nth(const uint32_t n)
 }
 
 void
-error_clear(void)
-{
+error_clear(void) {
     error_code = 0;
     error_count = 0;
 }

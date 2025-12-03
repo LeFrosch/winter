@@ -21,6 +21,6 @@ clean:
 	rm -rf build test
 
 format:
-	find . -type f \( -name "*.c" -o -name "*.h" \) | xargs $(FORMAT) -i
+	$(FORMAT) -i $(SRCS) $(HDRS)
 
 .PHONY: clean format

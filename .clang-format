@@ -4,9 +4,6 @@ IndentWidth: 4
 ColumnLimit: 120
 PenaltyBreakAssignment: 100000
 
----
-Language: Cpp
-
 BreakBeforeBraces: Attach
 
 AllowAllArgumentsOnNextLine: true
