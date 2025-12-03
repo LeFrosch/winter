@@ -1,0 +1,9 @@
+# build directory
+build/
+
+# build artifacts
+test
+
+# CLion
+.idea/
+
