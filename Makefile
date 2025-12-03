@@ -1,10 +1,10 @@
 CC     := clang
 FORMAT := clang-format
-FLAGS  := -Wall -Wextra -Werror -std=c23 -O3
+CFLAGS := -Wall -Wextra -Werror -std=c23 -O3
 
 include module.mk
 
-FLAGS += $(WINTER_FLAGS) $(WINTER_TEST_FLAGS)
+CFLAGS += $(WINTER_CFLAGS) $(WINTER_TEST_CFLAGS)
 
 SRCS := $(addprefix src/, test.c) $(WINTER_SRCS)
 HDRS := $(WINTER_HDRS)
