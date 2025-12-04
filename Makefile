@@ -23,4 +23,6 @@ clean:
 format:
 	$(FORMAT) -i $(SRCS) $(HDRS)
 
+all: test
+
 .PHONY: clean format
