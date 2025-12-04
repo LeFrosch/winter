@@ -15,7 +15,7 @@ typedef struct {
     uint32_t line;
 
     int32_t code;
-    char msg[128];
+    char msg[256];
 } error_frame_t;
 
 /// Reports a thread local error.
